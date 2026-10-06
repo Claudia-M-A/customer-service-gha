@@ -30,9 +30,9 @@ jobs:
       DB_HOST: localhost
       DB_PORT: 5432
       DB_NAME: customerdb
-      DB_USERNAME: postgres
-      DB_PASSWORD: ""
-      API_USERNAME: ci-user
+      DB_USERNAME: ${{secrets.POSTGRES_DB_USERNAME}}
+      DB_PASSWORD: ${{secrets.POSTGRES_DB_PASSWORD}}
+      API_USERNAME: ${{secrets.API_USERNAME}}
       API_PASSWORD: ${{ format('ci-{0}-{1}', github.run_id, github.run_attempt) }}
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
 
