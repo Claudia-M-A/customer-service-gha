@@ -33,7 +33,7 @@ jobs:
       DB_USERNAME: ${{secrets.POSTGRES_DB_USERNAME}}
       DB_PASSWORD: ${{secrets.POSTGRES_DB_PASSWORD}}
       API_USERNAME: ${{secrets.API_USERNAME}}
-      API_PASSWORD: ${{ format('ci-{0}-{1}', github.run_id, github.run_attempt) }}
+      API_PASSWORD: ${{ secrets.API_PASSWORD}}
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
 
     steps:
